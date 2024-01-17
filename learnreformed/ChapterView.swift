@@ -73,17 +73,30 @@ struct ChapterView: View {
                     .font(.title)
                     .padding()
 
-                var scriptureCounter = 1 // Initialize the counter before the ForEach loop
-
                 let contentWithCounter = getChapterDetailContentWithCounter(chapterDetail: chapterDetail)
-
-                let scripturesWithCounter = getScripturesListWithCounter(chapterDetail: chapterDetail)
 
                 ForEach(contentWithCounter.indices, id: \.self) { index in
                     let section = contentWithCounter[index]
-                    Text(section)
+
+                    Text(section["sectionText"] as! String)
                         .padding()
+
+                    if let sectionScripturesList = section["sectionScripturesList"] as? [ScriptureWithCounter] {
+                        ForEach(sectionScripturesList.indices, id: \.self) { index in
+                            let scripture = sectionScripturesList[index]
+
+                            Text("\(scripture.counter)) \(scripture.scriptures)")
+                                .padding()
+                        }
+                    }
                 }
+
+                // ForEach(contentWithCounter.indices, id: \.self) { index in
+                //     let section = contentWithCounter[index]
+
+                //     Text(section)
+                //         .padding()
+                // }
             }
         }
     }
@@ -100,47 +113,62 @@ struct ChapterView: View {
         return "\(chapterDetail.chapter)) \(chapterDetail.title)"
     }
 
-    private func getChapterDetailContentWithCounter(chapterDetail: Content) -> [String] {
-        var scriptureCounter = 1 // Initialize the counter
-        let contentWithScriptureCounter: [String] = chapterDetail.content.map { section in
-            let sectionText = section.map { contentItem in
-                var textWithScripture = contentItem.text // Initialize with the text
+    // private func getChapterDetailContentWithCounter(chapterDetail: Content) -> [String] {
+    //     var scriptureCounter = 1 // Initialize the counter
+    //     let contentWithScriptureCounter: [String] = chapterDetail.content.map { section in
+    //         let sectionText = section.map { contentItem in
+    //             var textWithScripture = contentItem.text // Initialize with the text
 
-                if let scriptures = contentItem.scriptures, !scriptures.isEmpty {
-                    // Append "[X]" to the text, where X is the incremented counter
-                    textWithScripture += " [\(scriptureCounter)]"
-                    scriptureCounter += 1 // Increment the counter
-                }
+    //             if let scriptures = contentItem.scriptures, !scriptures.isEmpty {
+    //                 // Append "[X]" to the text, where X is the incremented counter
+    //                 textWithScripture += " [\(scriptureCounter)]"
+    //                 scriptureCounter += 1 // Increment the counter
+    //             }
 
-                return textWithScripture
-            }.joined(separator: " ") // Use a space as a separator to create a single paragraph
+    //             return textWithScripture
+    //         }.joined(separator: " ") // Use a space as a separator to create a single paragraph
 
-            return sectionText
-        }
+    //         return sectionText
+    //     }
 
-        return contentWithScriptureCounter
-    }
+    //     return contentWithScriptureCounter
+    // }
 
     struct ScriptureWithCounter: Hashable {
         let counter: Int
         let scriptures: String
     }
 
-    private func getScripturesListWithCounter(chapterDetail: Content) -> [ScriptureWithCounter] {
-        var scriptureCounter = 1 // Initialize the counter
-        var scripturesWithCounter: [ScriptureWithCounter] = []
+    private func getChapterDetailContentWithCounter(chapterDetail: Content) -> [[String: Any]] {
+        var scriptureCounter = 1
+        var contentWithScriptureCounter: [[String: Any]] = []
 
         for section in chapterDetail.content {
-            for contentItem in section {
-                if let scriptures = contentItem.scriptures {
-                    let scriptureWithCounter = ScriptureWithCounter(counter: scriptureCounter, scriptures: scriptures)
-                    scripturesWithCounter.append(scriptureWithCounter)
+            var sectionScripturesList: [ScriptureWithCounter] = []
+
+            let sectionText = section.map { contentItem in
+                var textWithScripture = contentItem.text
+
+                if let scriptures = contentItem.scriptures, !scriptures.isEmpty {
+                    sectionScripturesList.append(ScriptureWithCounter(counter: scriptureCounter, scriptures: scriptures))
+
+                    textWithScripture += " [\(scriptureCounter)]"
                     scriptureCounter += 1
                 }
-            }
+
+                return textWithScripture
+            }.joined(separator: " ")
+
+            print("sectionScripturesList: \(sectionScripturesList)")
+            let sectionData: [String: Any] = [
+                "sectionText": sectionText,
+                "sectionScripturesList": sectionScripturesList,
+            ]
+
+            contentWithScriptureCounter.append(sectionData)
         }
 
-        return scripturesWithCounter
+        return contentWithScriptureCounter
     }
 }
 
