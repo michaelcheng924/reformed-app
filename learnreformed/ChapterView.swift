@@ -4,7 +4,9 @@ struct ChapterView: View {
     var chaptersData: [Content]
     var initialIndex: Int
 
-    @State private var currentChapterIndex: Int // State variable to track the current chapter index
+    @State private var currentChapterIndex: Int
+    @State private var isShowingModal = false
+    @State private var selectedScripture: String?
 
     init(chaptersData: [Content], initialIndex: Int) {
         self.chaptersData = chaptersData
@@ -85,18 +87,22 @@ struct ChapterView: View {
                         ForEach(sectionScripturesList.indices, id: \.self) { index in
                             let scripture = sectionScripturesList[index]
 
-                            Text("\(scripture.counter)) \(scripture.scriptures)")
-                                .padding()
+                            Button(action: {
+                                selectedScripture = scripture.scriptures
+                                isShowingModal = true
+                            }) {
+                                Text("\(scripture.counter)) \(scripture.scriptures)")
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 4)
+                                    .foregroundColor(Color.blue)
+                            }
+                        }
+                        .buttonStyle(.plain)
+                        .sheet(isPresented: $isShowingModal) {
+                            ScriptureModalView(selectedScripture: $selectedScripture)
                         }
                     }
                 }
-
-                // ForEach(contentWithCounter.indices, id: \.self) { index in
-                //     let section = contentWithCounter[index]
-
-                //     Text(section)
-                //         .padding()
-                // }
             }
         }
     }
@@ -112,27 +118,6 @@ struct ChapterView: View {
     private func getTitle2(chapterDetail: Content) -> String {
         return "\(chapterDetail.chapter)) \(chapterDetail.title)"
     }
-
-    // private func getChapterDetailContentWithCounter(chapterDetail: Content) -> [String] {
-    //     var scriptureCounter = 1 // Initialize the counter
-    //     let contentWithScriptureCounter: [String] = chapterDetail.content.map { section in
-    //         let sectionText = section.map { contentItem in
-    //             var textWithScripture = contentItem.text // Initialize with the text
-
-    //             if let scriptures = contentItem.scriptures, !scriptures.isEmpty {
-    //                 // Append "[X]" to the text, where X is the incremented counter
-    //                 textWithScripture += " [\(scriptureCounter)]"
-    //                 scriptureCounter += 1 // Increment the counter
-    //             }
-
-    //             return textWithScripture
-    //         }.joined(separator: " ") // Use a space as a separator to create a single paragraph
-
-    //         return sectionText
-    //     }
-
-    //     return contentWithScriptureCounter
-    // }
 
     struct ScriptureWithCounter: Hashable {
         let counter: Int
@@ -159,7 +144,6 @@ struct ChapterView: View {
                 return textWithScripture
             }.joined(separator: " ")
 
-            print("sectionScripturesList: \(sectionScripturesList)")
             let sectionData: [String: Any] = [
                 "sectionText": sectionText,
                 "sectionScripturesList": sectionScripturesList,

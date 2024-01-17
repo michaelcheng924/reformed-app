@@ -18,6 +18,7 @@
 		8E4474B92B5761FE00E4F3DD /* allConfessions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4474B82B5761FE00E4F3DD /* allConfessions.json */; };
 		8E4474BB2B576EFB00E4F3DD /* westminster.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4474BA2B576EFB00E4F3DD /* westminster.json */; };
 		8E4474BD2B577A7100E4F3DD /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4474BC2B577A7100E4F3DD /* ChapterView.swift */; };
+		8EB126192B583A0E004C1A36 /* ScriptureModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */; };
 		8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F32B573CC0006ECD4D /* CatechismsView.swift */; };
 		8EE304F62B573CE9006ECD4D /* CreedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F52B573CE9006ECD4D /* CreedsView.swift */; };
 		8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F72B575411006ECD4D /* SettingsView.swift */; };
@@ -38,6 +39,7 @@
 		8E4474B82B5761FE00E4F3DD /* allConfessions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allConfessions.json; sourceTree = "<group>"; };
 		8E4474BA2B576EFB00E4F3DD /* westminster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = westminster.json; sourceTree = "<group>"; };
 		8E4474BC2B577A7100E4F3DD /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureModalView.swift; sourceTree = "<group>"; };
 		8EE304F32B573CC0006ECD4D /* CatechismsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismsView.swift; sourceTree = "<group>"; };
 		8EE304F52B573CE9006ECD4D /* CreedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreedsView.swift; sourceTree = "<group>"; };
 		8EE304F72B575411006ECD4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				8E33DF932B475CC400F6C44B /* ConfessionsView.swift */,
 				8EE304F32B573CC0006ECD4D /* CatechismsView.swift */,
 				8E4474BC2B577A7100E4F3DD /* ChapterView.swift */,
+				8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */,
 				8EE304F52B573CE9006ECD4D /* CreedsView.swift */,
 				8EE304F72B575411006ECD4D /* SettingsView.swift */,
 				8EE304F92B575431006ECD4D /* AboutView.swift */,
@@ -192,6 +195,7 @@
 				8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */,
 				8E33DF942B475CC400F6C44B /* ConfessionsView.swift in Sources */,
 				8EE304F62B573CE9006ECD4D /* CreedsView.swift in Sources */,
+				8EB126192B583A0E004C1A36 /* ScriptureModalView.swift in Sources */,
 				8E33DF852B4750FB00F6C44B /* learnreformedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
