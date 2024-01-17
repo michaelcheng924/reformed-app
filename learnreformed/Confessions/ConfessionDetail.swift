@@ -13,7 +13,7 @@ struct Content: Codable {
     let content: [[TextContent]]
 }
 
-struct TextContent: Codable {
+struct TextContent: Codable, Hashable {
     let superscript: Int? // Added to represent superscripts if available
     let text: String
     let scriptures: String? // Added to represent scriptures if available

@@ -1,23 +1,24 @@
 import SwiftUI
 
 struct ChapterView: View {
+    var chapterDetail: Content
+
     var body: some View {
-//        VStack {
-//            ForEach(AllConfessions.allCconfessions, id: \.self) { confession in
-//                Button(action: {
-//                    // Handle button tap here
-//                    print("Button tapped")
-//                }) {
-//                    Text(confession.title)
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                }
-//                .padding(.vertical, 5)
-//            }
-//        }
-        Text("Chapter")
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text(chapterDetail.chapter == "Preface" ? "Preface) \(chapterDetail.title)" : "Chapter \(chapterDetail.chapter)) \(chapterDetail.title)")
+                    .font(.title)
+                    .padding()
+                
+                ForEach(chapterDetail.content, id: \.self) { section in
+                    ForEach(section, id: \.self) { contentItem in
+                        Text(contentItem.text)
+                            .padding()
+                    }
+                }
+
+            }
+        }
     }
 }
 

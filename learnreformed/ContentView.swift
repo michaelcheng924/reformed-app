@@ -17,7 +17,7 @@ struct ContentView: View {
                             EmptyView()
                         }
                         .navigationBarBackButtonHidden(true)
-                            .navigationBarTitle("Home", displayMode: .inline)
+                        .navigationBarTitle("Home", displayMode: .inline)
                         NavigationLink(destination: CatechismsView(), isActive: $isCatechismsActive) {
                             EmptyView()
                         }

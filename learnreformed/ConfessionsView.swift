@@ -31,8 +31,8 @@ struct ConfessionsView: View {
                     List(0..<detail.content.count, id: \.self) { index in
                         let chapter = detail.content[index]
                         
-                        NavigationLink(destination: ChapterView()) {
-                            Text("Chapter \(chapter.chapter): \(chapter.title)")
+                        NavigationLink(destination: ChapterView(chapterDetail: detail.content[index])) {
+                            Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
                         }
                         .navigationBarBackButtonHidden(true)
                             .navigationBarTitle("Confessions", displayMode: .inline)
@@ -46,7 +46,7 @@ struct ConfessionsView: View {
         .onAppear {
             loadConfessionDetail(index: selectedConfessionIndex)
         }
-        
+        .navigationBarHidden(true)
     }
     
     private func loadConfessionDetail(index: Int) {
