@@ -4,6 +4,8 @@ struct ConfessionsView: View {
     let allConfessions: [Confession]
     @State private var selectedConfessionIndex = 0
     @State private var confessionDetail: ConfessionDetail?
+    @State private var showChapter = false
+    @State private var chapterIndex = 0
     
     init() {
         if let loadedData = loadJSONFromFile(named: "allConfessions") {
@@ -35,11 +37,10 @@ struct ConfessionsView: View {
                     List(0..<detail.content.count, id: \.self) { index in
                         let chapter = detail.content[index]
                         
-                        NavigationLink(destination: ChapterView(chapterDetail: detail.content[index])) {
+                        NavigationLink(destination: ChapterView(chaptersData: detail.content, initialIndex: index)) {
                             Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
+                                .navigationBarTitle("Confessions", displayMode: .inline)
                         }
-//                        .navigationBarBackButtonHidden(true)
-                        .navigationBarTitle("Confessions", displayMode: .inline)
                     }
                 } else {
                     Text("Confession Detail Not Available")
