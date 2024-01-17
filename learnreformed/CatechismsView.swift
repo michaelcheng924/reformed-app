@@ -43,21 +43,25 @@ struct CatechismsView: View {
                                     .font(.headline)
                                     .padding(.top, 8)
 
-                                ForEach(0 ..< question.answer.count, id: \.self) { index in
-                                    let answer = question.answer[index]
+                                let contentWithCounter = getAnswerAndScriptureWithCounter(questionDetail: question)
 
-                                    Text(answer.text)
-                                        .font(.body)
-                                        .padding(.bottom, 8)
+                                ForEach(contentWithCounter.indices, id: \.self) { index in
+                                    let section = contentWithCounter[index]
 
-                                    if let scriptures = answer.scriptures {
-                                        Button(action: {
-                                            selectedScripture = scriptures
-                                            isShowingModal = true
-                                        }) {
-                                            Text(scriptures)
-                                                .padding(.vertical, 4)
-                                                .foregroundColor(Color.blue)
+                                    Text(section["sectionText"] as! String)
+
+                                    if let sectionScripturesList = section["sectionScripturesList"] as? [ScriptureWithCounter] {
+                                        ForEach(sectionScripturesList.indices, id: \.self) { index in
+                                            let scripture = sectionScripturesList[index]
+
+                                            Button(action: {
+                                                selectedScripture = scripture.scriptures
+                                                isShowingModal = true
+                                            }) {
+                                                Text("\(scripture.counter)) \(scripture.scriptures)")
+                                                    .padding(.top, 4)
+                                                    .foregroundColor(Color.blue)
+                                            }
                                         }
                                         .buttonStyle(.plain)
                                         .sheet(isPresented: $isShowingModal) {
@@ -77,7 +81,6 @@ struct CatechismsView: View {
         .onAppear {
             loadCatechismDetail(index: selectedCatechismIndex)
         }
-//        .navigationBarHidden(true)
     }
 
     private func loadCatechismDetail(index: Int) {
@@ -87,6 +90,40 @@ struct CatechismsView: View {
                 catechismDetail = catechismDetailData
             }
         }
+    }
+
+    struct ScriptureWithCounter: Hashable {
+        let counter: Int
+        let scriptures: String
+    }
+
+    private func getAnswerAndScriptureWithCounter(questionDetail: CatechismContent) -> [[String: Any]] {
+        var scriptureCounter = 1
+        var contentWithScriptureCounter: [[String: Any]] = []
+
+        var sectionScripturesList: [ScriptureWithCounter] = []
+
+        let sectionText = questionDetail.answer.map { contentItem in
+            var textWithScripture = contentItem.text
+
+            if let scriptures = contentItem.scriptures, !scriptures.isEmpty {
+                sectionScripturesList.append(ScriptureWithCounter(counter: scriptureCounter, scriptures: scriptures))
+
+                textWithScripture += " [\(scriptureCounter)]"
+                scriptureCounter += 1
+            }
+
+            return textWithScripture
+        }.joined(separator: " ")
+
+        let sectionData: [String: Any] = [
+            "sectionText": sectionText,
+            "sectionScripturesList": sectionScripturesList,
+        ]
+
+        contentWithScriptureCounter.append(sectionData)
+
+        return contentWithScriptureCounter
     }
 }
 

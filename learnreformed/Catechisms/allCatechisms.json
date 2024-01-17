@@ -1,8 +1,16 @@
 {
     "catechisms": [
         {
+            "title": "Westminster Shorter Catechism",
+            "slug": "westminsterShorter"
+        },
+        {
             "title": "Catechism for Boys and Girls",
             "slug": "boysGirls"
+        },
+        {
+            "title": "Westminster Larger Catechism",
+            "slug": "westminsterLarger"
         }
     ]
 }
