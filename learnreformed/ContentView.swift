@@ -4,8 +4,9 @@ struct ContentView: View {
     @State private var isConfessionsActive = false
     @State private var isCatechismsActive = false
     @State private var isCreedsActive = false
+    @State private var isAboutActive = false
 
-    let buttonLabels = ["CONFESSIONS", "CATECHISMS", "CREEDS", "SETTINGS", "ABOUT/CONTACT"]
+    let buttonLabels = ["CONFESSIONS", "CATECHISMS", "CREEDS", "ABOUT/CONTACT"]
 
     var body: some View {
         NavigationView {
@@ -15,12 +16,15 @@ struct ContentView: View {
                     VStack(spacing: 20) {
                         NavigationLink(destination: ConfessionsView(), isActive: $isConfessionsActive) {
                             EmptyView()
-                        } 
-                        
+                        }
+
                         NavigationLink(destination: CatechismsView(), isActive: $isCatechismsActive) {
                             EmptyView()
                         }
                         NavigationLink(destination: CreedsView(), isActive: $isCreedsActive) {
+                            EmptyView()
+                        }
+                        NavigationLink(destination: AboutView(), isActive: $isAboutActive) {
                             EmptyView()
                         }
                         ForEach(buttonLabels, id: \.self) { label in
@@ -31,6 +35,8 @@ struct ContentView: View {
                                     isCatechismsActive = true
                                 } else if label == "CREEDS" {
                                     isCreedsActive = true
+                                } else if label == "ABOUT/CONTACT" {
+                                    isAboutActive = true
                                 }
                                 // Handle other buttons here if needed
                             }) {
@@ -48,14 +54,12 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fill) // Fill the entire screen while maintaining aspect ratio
                         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height) // Ensure the image's dimensions match the screen
                         .edgesIgnoringSafeArea(.all) // Ignore safe areas
-                    
                 )
                 .navigationBarHidden(true)
                 .navigationBarTitle("Home", displayMode: .inline)
             }
         }
     }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {
