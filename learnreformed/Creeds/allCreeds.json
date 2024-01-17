@@ -1,0 +1,20 @@
+{
+    "creeds": [
+        {
+            "title": "Apostle's Creed",
+            "slug": "apostles"
+        },
+        {
+            "title": "Nicene Creed",
+            "slug": "nicene"
+        },
+        {
+            "title": "Chalcedonian Definition",
+            "slug": "chalcedonian"
+        },
+        {
+            "title": "Athanasian Creed",
+            "slug": "athanasian"
+        }
+    ]
+}

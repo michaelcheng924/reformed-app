@@ -1,0 +1,137 @@
+{
+  "type":"creed",
+  "slug":"apostles-creed",
+  "title":"Apostle's Creed",
+  "subtitle":"The Apostle’s creed is an early statement of Christian belief. It is Trinitarian in structure.",
+  "date":"c. 180 AD",
+  "dateNum":180,
+  "url":"/creeds/apostles-creed",
+  "about":[
+    "The Apostle’s Creed, sometimes referred to as the Old Roman Symbol, is an early statement of Christian belief. It is still used by many denominations for liturgy and catechism, including Presbyterians, Methodists, Congregationalists, Roman Catholics, Lutherans, and Anglicans.",
+    "The Apostle’s Creed is Trinitarian&mdash;there is a section on God the Father, a section on Jesus Christ the Son, and a section on the Holy Spirit. However, because of its early date, it does not address controversies that occurred later, such as the deity of Jesus Christ and the Holy Spirit.",
+    "The earliest known occurrence of the term \"Apostle’s Creed\" is in a letter from 390 AD from a synod in Milan."
+  ],
+  "content":[
+    {
+      "paragraph":[
+        {
+          "text":"I believe in God, the Father almighty,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"creator of heaven and earth."
+        }
+      ]
+    },
+    {
+      "paragraph":[
+        {
+          "text":"I believe in Jesus Christ, his only Son, our Lord,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"who was conceived by the Holy Spirit"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"and born of the virgin Mary."
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"He suffered under Pontius Pilate,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"was crucified, died, and was buried;"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"he descended to hell."
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"The third day he rose again from the dead."
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"He ascended to heaven"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"and is seated at the right hand of God the Father almighty."
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"From there he will come to judge the living and the dead."
+        }
+      ]
+    },
+    {
+      "paragraph":[
+        {
+          "text":"I believe in the Holy Spirit,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"the holy catholic* church,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"the communion of saints,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"the forgiveness of sins,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"the resurrection of the body,"
+        },
+        {
+          "styles":[
+            "indent"
+          ],
+          "text":"and the life everlasting. Amen."
+        }
+      ]
+    },
+    {
+      "paragraph":[
+        {
+          "styles":[
+            "italic"
+          ],
+          "text":"* that is, the true Christian church of all times and all places"
+        }
+      ]
+    }
+  ]
+}

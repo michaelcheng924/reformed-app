@@ -1,0 +1,23 @@
+{
+  "type":"creed",
+  "slug":"chalcedonian-definition",
+  "title":"Chalcedonian Definition",
+  "subtitle":"The Chalcedonian Definition (or Chalcedonian Creed) states that Jesus is one person with two natures.",
+  "date":"451 AD",
+  "dateNum":451,
+  "url":"/creeds/chalcedonian-definition",
+  "about":[
+    "The Chalcedonian Definition (or Chalcedonian Creed) was formulated in 451 AD at the Council of Chalcedon, which was the fourth Ecumenical Council and the first council to not be recognized by the Oriental Orthodox church.",
+    "The definition states that Jesus is one person with two natures. The teaching that Jesus possesses two natures sides with western and Antiochene Christology against the teachings of Cyril of Alexandria, who taught that Jesus only possesses one nature.",
+    "The teaching that Jesus exists as one person with two distinct natures (God and man) is called the hypostatic union, which the Chalcedonian Definition explicitly affirms."
+  ],
+  "content":[
+    {
+      "paragraph":[
+        {
+          "text":"Therefore, following the holy fathers, we all with one accord teach men to acknowledge one and the same Son, our Lord Jesus Christ, at once complete in Godhead and complete in manhood, truly God and truly man, consisting also of a reasonable soul and body; of one substance with the Father as regards his Godhead, and at the same time of one substance with us as regards his manhood; like us in all respects, apart from sin; as regards his Godhead, begotten of the Father before the ages, but yet as regards his manhood begotten, for us men and for our salvation, of Mary the Virgin, the God-bearer; one and the same Christ, Son, Lord, Only-begotten, recognized in two natures, without confusion, without change, without division, without separation; the distinction of natures being in no way annulled by the union, but rather the characteristics of each nature being preserved and coming together to form one person and subsistence, not as parted or separated into two persons, but one and the same Son and Only-begotten God the Word, Lord Jesus Christ; even as the prophets from earliest times spoke of him, and our Lord Jesus Christ himself taught us, and the creed of the fathers has handed down to us."
+        }
+      ]
+    }
+  ]
+}

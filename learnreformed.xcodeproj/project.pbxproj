@@ -24,6 +24,13 @@
 		8E6E26DC2B58768B0040F35D /* westminsterLarger.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DB2B58768A0040F35D /* westminsterLarger.json */; };
 		8E6E26DE2B587AF50040F35D /* baptist.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DD2B587AF50040F35D /* baptist.json */; };
 		8E6E26E02B587BBB0040F35D /* heidelberg.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DF2B587BBB0040F35D /* heidelberg.json */; };
+		8E6E26E32B587F500040F35D /* allCreeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26E22B587F500040F35D /* allCreeds.json */; };
+		8E6E26E52B587F7E0040F35D /* apostles.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26E42B587F7E0040F35D /* apostles.json */; };
+		8E6E26E72B587FA00040F35D /* CreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E26E62B587FA00040F35D /* CreedDetail.swift */; };
+		8E6E26E92B5881010040F35D /* AllCreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E26E82B5881010040F35D /* AllCreeds.swift */; };
+		8E6E26EB2B5885580040F35D /* nicene.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26EA2B5885580040F35D /* nicene.json */; };
+		8E6E26ED2B5886610040F35D /* chalcedonian.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26EC2B5886610040F35D /* chalcedonian.json */; };
+		8E6E26EF2B5886F20040F35D /* athanasian.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26EE2B5886F20040F35D /* athanasian.json */; };
 		8EB126192B583A0E004C1A36 /* ScriptureModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */; };
 		8EB1261C2B5851F9004C1A36 /* allCatechisms.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB1261B2B5851F9004C1A36 /* allCatechisms.json */; };
 		8EB1261E2B585260004C1A36 /* AllCatechisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1261D2B585260004C1A36 /* AllCatechisms.swift */; };
@@ -55,6 +62,13 @@
 		8E6E26DB2B58768A0040F35D /* westminsterLarger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = westminsterLarger.json; sourceTree = "<group>"; };
 		8E6E26DD2B587AF50040F35D /* baptist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = baptist.json; sourceTree = "<group>"; };
 		8E6E26DF2B587BBB0040F35D /* heidelberg.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = heidelberg.json; sourceTree = "<group>"; };
+		8E6E26E22B587F500040F35D /* allCreeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allCreeds.json; sourceTree = "<group>"; };
+		8E6E26E42B587F7E0040F35D /* apostles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apostles.json; sourceTree = "<group>"; };
+		8E6E26E62B587FA00040F35D /* CreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreedDetail.swift; sourceTree = "<group>"; };
+		8E6E26E82B5881010040F35D /* AllCreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCreeds.swift; sourceTree = "<group>"; };
+		8E6E26EA2B5885580040F35D /* nicene.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nicene.json; sourceTree = "<group>"; };
+		8E6E26EC2B5886610040F35D /* chalcedonian.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chalcedonian.json; sourceTree = "<group>"; };
+		8E6E26EE2B5886F20040F35D /* athanasian.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = athanasian.json; sourceTree = "<group>"; };
 		8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureModalView.swift; sourceTree = "<group>"; };
 		8EB1261B2B5851F9004C1A36 /* allCatechisms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allCatechisms.json; sourceTree = "<group>"; };
 		8EB1261D2B585260004C1A36 /* AllCatechisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatechisms.swift; sourceTree = "<group>"; };
@@ -102,6 +116,7 @@
 				8E33DF932B475CC400F6C44B /* ConfessionsView.swift */,
 				8EB1261A2B5851CF004C1A36 /* Catechisms */,
 				8EE304F32B573CC0006ECD4D /* CatechismsView.swift */,
+				8E6E26E12B587F440040F35D /* Creeds */,
 				8E4474BC2B577A7100E4F3DD /* ChapterView.swift */,
 				8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */,
 				8EE304F52B573CE9006ECD4D /* CreedsView.swift */,
@@ -134,6 +149,20 @@
 				8E4474B62B57617F00E4F3DD /* AllConfessions.swift */,
 			);
 			path = Confessions;
+			sourceTree = "<group>";
+		};
+		8E6E26E12B587F440040F35D /* Creeds */ = {
+			isa = PBXGroup;
+			children = (
+				8E6E26E22B587F500040F35D /* allCreeds.json */,
+				8E6E26EC2B5886610040F35D /* chalcedonian.json */,
+				8E6E26E42B587F7E0040F35D /* apostles.json */,
+				8E6E26EE2B5886F20040F35D /* athanasian.json */,
+				8E6E26E82B5881010040F35D /* AllCreeds.swift */,
+				8E6E26EA2B5885580040F35D /* nicene.json */,
+				8E6E26E62B587FA00040F35D /* CreedDetail.swift */,
+			);
+			path = Creeds;
 			sourceTree = "<group>";
 		};
 		8EB1261A2B5851CF004C1A36 /* Catechisms */ = {
@@ -211,11 +240,16 @@
 			files = (
 				8E6E26E02B587BBB0040F35D /* heidelberg.json in Resources */,
 				8E33DF992B4769A200F6C44B /* 1689.json in Resources */,
+				8E6E26E52B587F7E0040F35D /* apostles.json in Resources */,
 				8E6E26D62B5866010040F35D /* belgic.json in Resources */,
+				8E6E26EF2B5886F20040F35D /* athanasian.json in Resources */,
 				8E6E26D82B586A440040F35D /* dort.json in Resources */,
+				8E6E26ED2B5886610040F35D /* chalcedonian.json in Resources */,
+				8E6E26EB2B5885580040F35D /* nicene.json in Resources */,
 				8EB1261C2B5851F9004C1A36 /* allCatechisms.json in Resources */,
 				8E4474BB2B576EFB00E4F3DD /* westminster.json in Resources */,
 				8E6E26DA2B58704A0040F35D /* westminsterShorter.json in Resources */,
+				8E6E26E32B587F500040F35D /* allCreeds.json in Resources */,
 				8E33DF8D2B4750FC00F6C44B /* Preview Assets.xcassets in Resources */,
 				8E6E26DE2B587AF50040F35D /* baptist.json in Resources */,
 				8E6E26DC2B58768B0040F35D /* westminsterLarger.json in Resources */,
@@ -236,8 +270,10 @@
 				8E4474B72B57617F00E4F3DD /* AllConfessions.swift in Sources */,
 				8EE304FA2B575431006ECD4D /* AboutView.swift in Sources */,
 				8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */,
+				8E6E26E72B587FA00040F35D /* CreedDetail.swift in Sources */,
 				8EB1261E2B585260004C1A36 /* AllCatechisms.swift in Sources */,
 				8E33DF872B4750FB00F6C44B /* ContentView.swift in Sources */,
+				8E6E26E92B5881010040F35D /* AllCreeds.swift in Sources */,
 				8E4474BD2B577A7100E4F3DD /* ChapterView.swift in Sources */,
 				8E33DF9D2B47729200F6C44B /* ConfessionDetail.swift in Sources */,
 				8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */,
