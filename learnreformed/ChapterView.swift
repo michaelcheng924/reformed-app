@@ -3,13 +3,15 @@ import SwiftUI
 struct ChapterView: View {
     var chaptersData: [Content]
     var initialIndex: Int
+    var title: String
 
     @State private var currentChapterIndex: Int
     @State private var isShowingModal = false
     @State private var selectedScripture: String?
 
-    init(chaptersData: [Content], initialIndex: Int) {
+    init(chaptersData: [Content], initialIndex: Int, title: String) {
         self.chaptersData = chaptersData
+        self.title = title
         self.initialIndex = initialIndex
         _currentChapterIndex = State(initialValue: initialIndex) // Initialize the currentChapterIndex
     }
@@ -80,8 +82,13 @@ struct ChapterView: View {
                 ForEach(contentWithCounter.indices, id: \.self) { index in
                     let section = contentWithCounter[index]
 
+                    Text("Section \(index + 1)")
+                        .font(.headline)
+                        .padding(.horizontal)
+                        .padding(.top, 10)
+
                     Text(section["sectionText"] as! String)
-                        .padding()
+                        .padding(.horizontal)
 
                     if let sectionScripturesList = section["sectionScripturesList"] as? [ScriptureWithCounter] {
                         ForEach(sectionScripturesList.indices, id: \.self) { index in
@@ -93,7 +100,7 @@ struct ChapterView: View {
                             }) {
                                 Text("\(scripture.counter)) \(scripture.scriptures)")
                                     .padding(.horizontal)
-                                    .padding(.vertical, 4)
+                                    .padding(.top, 4)
                                     .foregroundColor(Color.blue)
                             }
                         }
@@ -105,6 +112,7 @@ struct ChapterView: View {
                 }
             }
         }
+        .navigationBarTitle(title, displayMode: .inline)
     }
 
     private func getTitle(chapterDetail: Content) -> String {

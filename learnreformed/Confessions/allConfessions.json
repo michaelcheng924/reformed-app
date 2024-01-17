@@ -7,6 +7,14 @@
         {
             "title": "1689 London Baptist Confession of Faith",
             "slug": "1689"
+        },
+        {
+            "title": "Belgic Confession",
+            "slug": "belgic"
+        },
+        {
+            "title": "Canons of Dort",
+            "slug": "dort"
         }
     ]
 }

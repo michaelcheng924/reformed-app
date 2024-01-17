@@ -36,7 +36,7 @@ struct ConfessionsView: View {
                     List(0 ..< detail.content.count, id: \.self) { index in
                         let chapter = detail.content[index]
 
-                        NavigationLink(destination: ChapterView(chaptersData: detail.content, initialIndex: index)) {
+                        NavigationLink(destination: ChapterView(chaptersData: detail.content, initialIndex: index, title: detail.title)) {
                             Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
                                 .navigationBarTitle("All Chapters", displayMode: .inline)
                         }
