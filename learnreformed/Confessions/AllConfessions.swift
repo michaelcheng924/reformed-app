@@ -1,7 +1,8 @@
-import Foundation
+struct AllConfessions: Codable {
+    let confessions: [Confession]
+}
 
-struct AllConfessions {
-    static var allCconfessions = [
-        LondonBaptist.londonBaptist
-    ]
+struct Confession: Codable {
+    let slug: String
+    let title: String
 }

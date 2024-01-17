@@ -1,0 +1,12 @@
+{
+    "confessions": [
+        {
+            "title": "Westminster Confession of Faith",
+            "slug": "westminster"
+        },
+        {
+            "title": "1689 London Baptist Confession of Faith",
+            "slug": "1689"
+        }
+    ]
+}

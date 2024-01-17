@@ -1,38 +1,61 @@
 import SwiftUI
 
 struct ConfessionsView: View {
-//    let londonBaptist: LondonBaptist
-//    
-//    init() {
-//        if let loadedData = loadJSONFromFile(named: "1689") {
-//            print(loadedData)
-//            self.londonBaptist = loadedData
-//        } else {
-//            print("HIHI")
-//            self.londonBaptist = LondonBaptist(
-//                slug: ""
-//            )
-//        }
-//    }
+    let allConfessions: [Confession]
+    @State private var selectedConfessionIndex = 0
+    @State private var confessionDetail: ConfessionDetail?
+    
+    init() {
+        if let loadedData = loadJSONFromFile(named: "allConfessions") {
+            self.allConfessions = loadedData.confessions
+            //            loadConfessionDetail(index: selectedConfessionIndex)
+        } else {
+            self.allConfessions = []
+        }
+    }
     
     var body: some View {
         VStack {
-            Text("CONFESSIONS")
-//            ForEach(AllConfessions.allCconfessions, id: \.self) { confession in
-//                Button(action: {
-//                    // Handle button tap here
-//                    print("Button tapped")
-//                }) {
-//                    Text(confession.title)
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                }
-//                .padding(.vertical, 5)
-//            }
+            Picker("Select Confession", selection: $selectedConfessionIndex) {
+                ForEach(0..<allConfessions.count, id: \.self) { index in
+                    Text(allConfessions[index].title)
+                        .tag(index)
+                }
+            }
+            .pickerStyle(MenuPickerStyle())
+            .padding()
+            
+            if selectedConfessionIndex < allConfessions.count {
+                
+                if let detail = confessionDetail {
+                    List(0..<detail.content.count, id: \.self) { index in
+                        let chapter = detail.content[index]
+                        
+                        NavigationLink(destination: ChapterView()) {
+                            Text("Chapter \(chapter.chapter): \(chapter.title)")
+                        }
+                        .navigationBarBackButtonHidden(true)
+                            .navigationBarTitle("Confessions", displayMode: .inline)
+                    }
+                } else {
+                    Text("Confession Detail Not Available")
+                }
+                
+            }
         }
-        .navigationTitle("Confessions")
+        .onAppear {
+            loadConfessionDetail(index: selectedConfessionIndex)
+        }
+        
+    }
+    
+    private func loadConfessionDetail(index: Int) {
+        if index < allConfessions.count {
+            let slug = allConfessions[index].slug
+            if let confessionDetailData = loadConfessionJSONFromFile(named: slug) {
+                self.confessionDetail = confessionDetailData
+            }
+        }
     }
 }
 
@@ -42,11 +65,33 @@ struct ConfessionsView_Previews: PreviewProvider {
     }
 }
 
-func loadJSONFromFile(named filename: String) -> LondonBaptist? {
-    if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
-       let jsonData = try? Data(contentsOf: jsonURL),
-       let londonBaptist = try? JSONDecoder().decode(LondonBaptist.self, from: jsonData) {
-        return londonBaptist
+func loadJSONFromFile(named filename: String) -> AllConfessions? {
+    do {
+        if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
+           let jsonData = try? Data(contentsOf: jsonURL) {
+            let allConfessions = try JSONDecoder().decode(AllConfessions.self, from: jsonData)
+            return allConfessions
+        } else {
+            print("Error loading JSON data from file")
+        }
+    } catch {
+        print("Error decoding JSON:", error)
+    }
+    return nil
+}
+
+func loadConfessionJSONFromFile(named filename: String) -> ConfessionDetail? {
+    print(filename)
+    do {
+        if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
+           let jsonData = try? Data(contentsOf: jsonURL) {
+            let confessionDetail = try JSONDecoder().decode(ConfessionDetail.self, from: jsonData)
+            return confessionDetail
+        } else {
+            print("Error loading JSON data from file")
+        }
+    } catch {
+        print("Error decoding JSON:", error)
     }
     return nil
 }

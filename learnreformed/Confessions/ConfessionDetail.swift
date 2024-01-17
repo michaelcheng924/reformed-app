@@ -1,5 +1,4 @@
-// Define a struct that matches the structure of your JSON data
-struct LondonBaptist: Codable {
+struct ConfessionDetail: Codable {
     let slug: String
     let title: String
     let date: String
@@ -10,9 +9,12 @@ struct LondonBaptist: Codable {
 struct Content: Codable {
     let chapter: String
     let title: String
+    let topic: [String]? // Added to represent topics if available
     let content: [[TextContent]]
 }
 
 struct TextContent: Codable {
+    let superscript: Int? // Added to represent superscripts if available
     let text: String
+    let scriptures: String? // Added to represent scriptures if available
 }
