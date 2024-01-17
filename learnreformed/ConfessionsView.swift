@@ -24,7 +24,6 @@ struct ConfessionsView: View {
                 }
             }
             .pickerStyle(MenuPickerStyle())
-            .padding()
             .onChange(of: selectedConfessionIndex) { newIndex in
                 // Handle the new index selection here
                 // You can update confessionDetail or perform any other actions

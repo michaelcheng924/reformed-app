@@ -18,14 +18,13 @@ struct CatechismsView: View {
 
     var body: some View {
         VStack {
-            Picker("Select Confession", selection: $selectedCatechismIndex) {
+            Picker("Select Catechism", selection: $selectedCatechismIndex) {
                 ForEach(0 ..< allCatechisms.count, id: \.self) { index in
                     Text(allCatechisms[index].title)
                         .tag(index)
                 }
             }
             .pickerStyle(MenuPickerStyle())
-            .padding()
             .onChange(of: selectedCatechismIndex) { newIndex in
                 // Handle the new index selection here
                 // You can update catechismDetail or perform any other actions

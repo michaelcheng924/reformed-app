@@ -22,6 +22,8 @@
 		8E6E26D82B586A440040F35D /* dort.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26D72B586A440040F35D /* dort.json */; };
 		8E6E26DA2B58704A0040F35D /* westminsterShorter.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26D92B58704A0040F35D /* westminsterShorter.json */; };
 		8E6E26DC2B58768B0040F35D /* westminsterLarger.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DB2B58768A0040F35D /* westminsterLarger.json */; };
+		8E6E26DE2B587AF50040F35D /* baptist.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DD2B587AF50040F35D /* baptist.json */; };
+		8E6E26E02B587BBB0040F35D /* heidelberg.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E6E26DF2B587BBB0040F35D /* heidelberg.json */; };
 		8EB126192B583A0E004C1A36 /* ScriptureModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */; };
 		8EB1261C2B5851F9004C1A36 /* allCatechisms.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB1261B2B5851F9004C1A36 /* allCatechisms.json */; };
 		8EB1261E2B585260004C1A36 /* AllCatechisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1261D2B585260004C1A36 /* AllCatechisms.swift */; };
@@ -51,6 +53,8 @@
 		8E6E26D72B586A440040F35D /* dort.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dort.json; sourceTree = "<group>"; };
 		8E6E26D92B58704A0040F35D /* westminsterShorter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = westminsterShorter.json; sourceTree = "<group>"; };
 		8E6E26DB2B58768A0040F35D /* westminsterLarger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = westminsterLarger.json; sourceTree = "<group>"; };
+		8E6E26DD2B587AF50040F35D /* baptist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = baptist.json; sourceTree = "<group>"; };
+		8E6E26DF2B587BBB0040F35D /* heidelberg.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = heidelberg.json; sourceTree = "<group>"; };
 		8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureModalView.swift; sourceTree = "<group>"; };
 		8EB1261B2B5851F9004C1A36 /* allCatechisms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allCatechisms.json; sourceTree = "<group>"; };
 		8EB1261D2B585260004C1A36 /* AllCatechisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatechisms.swift; sourceTree = "<group>"; };
@@ -137,10 +141,12 @@
 			children = (
 				8EB1261B2B5851F9004C1A36 /* allCatechisms.json */,
 				8E6E26D92B58704A0040F35D /* westminsterShorter.json */,
+				8E6E26DF2B587BBB0040F35D /* heidelberg.json */,
 				8EB126212B585501004C1A36 /* boysGirls.json */,
 				8EB1261D2B585260004C1A36 /* AllCatechisms.swift */,
 				8EB1261F2B585393004C1A36 /* CatechismDetail.swift */,
 				8E6E26DB2B58768A0040F35D /* westminsterLarger.json */,
+				8E6E26DD2B587AF50040F35D /* baptist.json */,
 			);
 			path = Catechisms;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6E26E02B587BBB0040F35D /* heidelberg.json in Resources */,
 				8E33DF992B4769A200F6C44B /* 1689.json in Resources */,
 				8E6E26D62B5866010040F35D /* belgic.json in Resources */,
 				8E6E26D82B586A440040F35D /* dort.json in Resources */,
@@ -210,6 +217,7 @@
 				8E4474BB2B576EFB00E4F3DD /* westminster.json in Resources */,
 				8E6E26DA2B58704A0040F35D /* westminsterShorter.json in Resources */,
 				8E33DF8D2B4750FC00F6C44B /* Preview Assets.xcassets in Resources */,
+				8E6E26DE2B587AF50040F35D /* baptist.json in Resources */,
 				8E6E26DC2B58768B0040F35D /* westminsterLarger.json in Resources */,
 				8E4474B92B5761FE00E4F3DD /* allConfessions.json in Resources */,
 				8E33DF892B4750FC00F6C44B /* Assets.xcassets in Resources */,

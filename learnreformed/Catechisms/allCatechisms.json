@@ -11,6 +11,14 @@
         {
             "title": "Westminster Larger Catechism",
             "slug": "westminsterLarger"
+        },
+        {
+            "title": "Baptist Catechism",
+            "slug": "baptist"
+        },
+        {
+            "title": "Heidelberg Catechism",
+            "slug": "heidelberg"
         }
     ]
 }

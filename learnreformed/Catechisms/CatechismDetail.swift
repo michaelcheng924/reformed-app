@@ -6,8 +6,9 @@ struct CatechismDetail: Codable {
 
 struct CatechismContent: Codable {
     let section: String?
-    let number: Int
+    let number: Int?
     let question: String
+    let questionScriptures: String?
     let answer: [Answer]
 }
 
