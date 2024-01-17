@@ -15,19 +15,14 @@ struct ContentView: View {
                     VStack(spacing: 20) {
                         NavigationLink(destination: ConfessionsView(), isActive: $isConfessionsActive) {
                             EmptyView()
-                        }
-                        .navigationBarBackButtonHidden(true)
-                        .navigationBarTitle("Home", displayMode: .inline)
+                        } 
+                        
                         NavigationLink(destination: CatechismsView(), isActive: $isCatechismsActive) {
                             EmptyView()
                         }
-                        .navigationBarBackButtonHidden(true)
-                            .navigationBarTitle("Home", displayMode: .inline)
                         NavigationLink(destination: CreedsView(), isActive: $isCreedsActive) {
                             EmptyView()
                         }
-                        .navigationBarBackButtonHidden(true)
-                            .navigationBarTitle("Home", displayMode: .inline)
                         ForEach(buttonLabels, id: \.self) { label in
                             Button(action: {
                                 if label == "CONFESSIONS" {
@@ -53,8 +48,10 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fill) // Fill the entire screen while maintaining aspect ratio
                         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height) // Ensure the image's dimensions match the screen
                         .edgesIgnoringSafeArea(.all) // Ignore safe areas
+                    
                 )
                 .navigationBarHidden(true)
+                .navigationBarTitle("Home", displayMode: .inline)
             }
         }
     }

@@ -8,7 +8,6 @@ struct ConfessionsView: View {
     init() {
         if let loadedData = loadJSONFromFile(named: "allConfessions") {
             self.allConfessions = loadedData.confessions
-            //            loadConfessionDetail(index: selectedConfessionIndex)
         } else {
             self.allConfessions = []
         }
@@ -24,6 +23,11 @@ struct ConfessionsView: View {
             }
             .pickerStyle(MenuPickerStyle())
             .padding()
+            .onChange(of: selectedConfessionIndex) { newIndex in
+                // Handle the new index selection here
+                // You can update confessionDetail or perform any other actions
+                loadConfessionDetail(index: newIndex)
+            }
             
             if selectedConfessionIndex < allConfessions.count {
                 
@@ -34,8 +38,8 @@ struct ConfessionsView: View {
                         NavigationLink(destination: ChapterView(chapterDetail: detail.content[index])) {
                             Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
                         }
-                        .navigationBarBackButtonHidden(true)
-                            .navigationBarTitle("Confessions", displayMode: .inline)
+//                        .navigationBarBackButtonHidden(true)
+                        .navigationBarTitle("Confessions", displayMode: .inline)
                     }
                 } else {
                     Text("Confession Detail Not Available")
@@ -46,7 +50,7 @@ struct ConfessionsView: View {
         .onAppear {
             loadConfessionDetail(index: selectedConfessionIndex)
         }
-        .navigationBarHidden(true)
+//        .navigationBarHidden(true)
     }
     
     private func loadConfessionDetail(index: Int) {
@@ -81,7 +85,6 @@ func loadJSONFromFile(named filename: String) -> AllConfessions? {
 }
 
 func loadConfessionJSONFromFile(named filename: String) -> ConfessionDetail? {
-    print(filename)
     do {
         if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
            let jsonData = try? Data(contentsOf: jsonURL) {
