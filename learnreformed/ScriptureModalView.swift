@@ -10,20 +10,24 @@ struct ScriptureModalView: View {
                 if let response = response {
                     ForEach(response.results) { result in
                         Text(result.scripture)
-                            .font(.system(size: 22, weight: .bold))
+                            .font(.system(size: 25, weight: .bold))
                             .padding(.vertical, 8)
 
-                        ForEach(result.results) { chapter in
-                            Text("Chapter \(chapter.chapter)")
-                                .font(.title3)
-
-                            Text(chapter.verses.map { "\($0.verse) \($0.text)" }.joined(separator: " "))
-                                .font(.body)
-                        }
+                        let allVerses = result.results.flatMap { $0.verses.map { "\($0.verse) \($0.text)" } }
+                        Text(allVerses.joined(separator: " "))
+                            .font(.body)
                     }
                 }
             }
             .padding()
+            .onAppear {
+                // Check if selectedScripture exists before making the request
+                if let selectedScripture = selectedScripture {
+                    postScriptureToAPI(selectedScripture: selectedScripture)
+                } else {
+                    print("selectedScripture is nil or empty, not making the request.")
+                }
+            }
         }
     }
 

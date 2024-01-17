@@ -19,6 +19,10 @@
 		8E4474BB2B576EFB00E4F3DD /* westminster.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E4474BA2B576EFB00E4F3DD /* westminster.json */; };
 		8E4474BD2B577A7100E4F3DD /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4474BC2B577A7100E4F3DD /* ChapterView.swift */; };
 		8EB126192B583A0E004C1A36 /* ScriptureModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */; };
+		8EB1261C2B5851F9004C1A36 /* allCatechisms.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB1261B2B5851F9004C1A36 /* allCatechisms.json */; };
+		8EB1261E2B585260004C1A36 /* AllCatechisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1261D2B585260004C1A36 /* AllCatechisms.swift */; };
+		8EB126202B585393004C1A36 /* CatechismDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1261F2B585393004C1A36 /* CatechismDetail.swift */; };
+		8EB126222B585501004C1A36 /* boysGirls.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB126212B585501004C1A36 /* boysGirls.json */; };
 		8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F32B573CC0006ECD4D /* CatechismsView.swift */; };
 		8EE304F62B573CE9006ECD4D /* CreedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F52B573CE9006ECD4D /* CreedsView.swift */; };
 		8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F72B575411006ECD4D /* SettingsView.swift */; };
@@ -40,6 +44,10 @@
 		8E4474BA2B576EFB00E4F3DD /* westminster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = westminster.json; sourceTree = "<group>"; };
 		8E4474BC2B577A7100E4F3DD /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureModalView.swift; sourceTree = "<group>"; };
+		8EB1261B2B5851F9004C1A36 /* allCatechisms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allCatechisms.json; sourceTree = "<group>"; };
+		8EB1261D2B585260004C1A36 /* AllCatechisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatechisms.swift; sourceTree = "<group>"; };
+		8EB1261F2B585393004C1A36 /* CatechismDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismDetail.swift; sourceTree = "<group>"; };
+		8EB126212B585501004C1A36 /* boysGirls.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = boysGirls.json; sourceTree = "<group>"; };
 		8EE304F32B573CC0006ECD4D /* CatechismsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismsView.swift; sourceTree = "<group>"; };
 		8EE304F52B573CE9006ECD4D /* CreedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreedsView.swift; sourceTree = "<group>"; };
 		8EE304F72B575411006ECD4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 				8E33DF862B4750FB00F6C44B /* ContentView.swift */,
 				8E33DF952B47612F00F6C44B /* Confessions */,
 				8E33DF932B475CC400F6C44B /* ConfessionsView.swift */,
+				8EB1261A2B5851CF004C1A36 /* Catechisms */,
 				8EE304F32B573CC0006ECD4D /* CatechismsView.swift */,
 				8E4474BC2B577A7100E4F3DD /* ChapterView.swift */,
 				8EB126182B583A0E004C1A36 /* ScriptureModalView.swift */,
@@ -111,6 +120,17 @@
 				8E4474B62B57617F00E4F3DD /* AllConfessions.swift */,
 			);
 			path = Confessions;
+			sourceTree = "<group>";
+		};
+		8EB1261A2B5851CF004C1A36 /* Catechisms */ = {
+			isa = PBXGroup;
+			children = (
+				8EB1261B2B5851F9004C1A36 /* allCatechisms.json */,
+				8EB126212B585501004C1A36 /* boysGirls.json */,
+				8EB1261D2B585260004C1A36 /* AllCatechisms.swift */,
+				8EB1261F2B585393004C1A36 /* CatechismDetail.swift */,
+			);
+			path = Catechisms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,10 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E33DF992B4769A200F6C44B /* 1689.json in Resources */,
+				8EB1261C2B5851F9004C1A36 /* allCatechisms.json in Resources */,
 				8E4474BB2B576EFB00E4F3DD /* westminster.json in Resources */,
 				8E33DF8D2B4750FC00F6C44B /* Preview Assets.xcassets in Resources */,
 				8E4474B92B5761FE00E4F3DD /* allConfessions.json in Resources */,
 				8E33DF892B4750FC00F6C44B /* Assets.xcassets in Resources */,
+				8EB126222B585501004C1A36 /* boysGirls.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +208,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB126202B585393004C1A36 /* CatechismDetail.swift in Sources */,
 				8E4474B72B57617F00E4F3DD /* AllConfessions.swift in Sources */,
 				8EE304FA2B575431006ECD4D /* AboutView.swift in Sources */,
 				8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */,
+				8EB1261E2B585260004C1A36 /* AllCatechisms.swift in Sources */,
 				8E33DF872B4750FB00F6C44B /* ContentView.swift in Sources */,
 				8E4474BD2B577A7100E4F3DD /* ChapterView.swift in Sources */,
 				8E33DF9D2B47729200F6C44B /* ConfessionDetail.swift in Sources */,
