@@ -11,6 +11,13 @@
 		8E33DF872B4750FB00F6C44B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33DF862B4750FB00F6C44B /* ContentView.swift */; };
 		8E33DF892B4750FC00F6C44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E33DF882B4750FC00F6C44B /* Assets.xcassets */; };
 		8E33DF8D2B4750FC00F6C44B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E33DF8C2B4750FC00F6C44B /* Preview Assets.xcassets */; };
+		8E33DF942B475CC400F6C44B /* ConfessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33DF932B475CC400F6C44B /* ConfessionsView.swift */; };
+		8E33DF992B4769A200F6C44B /* 1689.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E33DF982B4769A200F6C44B /* 1689.json */; };
+		8E33DF9D2B47729200F6C44B /* LondonBaptist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33DF9C2B47729200F6C44B /* LondonBaptist.swift */; };
+		8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F32B573CC0006ECD4D /* CatechismsView.swift */; };
+		8EE304F62B573CE9006ECD4D /* CreedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F52B573CE9006ECD4D /* CreedsView.swift */; };
+		8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F72B575411006ECD4D /* SettingsView.swift */; };
+		8EE304FA2B575431006ECD4D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE304F92B575431006ECD4D /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		8E33DF882B4750FC00F6C44B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E33DF8A2B4750FC00F6C44B /* learnreformed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = learnreformed.entitlements; sourceTree = "<group>"; };
 		8E33DF8C2B4750FC00F6C44B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E33DF932B475CC400F6C44B /* ConfessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfessionsView.swift; sourceTree = "<group>"; };
+		8E33DF982B4769A200F6C44B /* 1689.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1689.json; sourceTree = "<group>"; };
+		8E33DF9C2B47729200F6C44B /* LondonBaptist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LondonBaptist.swift; sourceTree = "<group>"; };
+		8EE304F32B573CC0006ECD4D /* CatechismsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismsView.swift; sourceTree = "<group>"; };
+		8EE304F52B573CE9006ECD4D /* CreedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreedsView.swift; sourceTree = "<group>"; };
+		8EE304F72B575411006ECD4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8EE304F92B575431006ECD4D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,12 @@
 			children = (
 				8E33DF842B4750FB00F6C44B /* learnreformedApp.swift */,
 				8E33DF862B4750FB00F6C44B /* ContentView.swift */,
+				8E33DF952B47612F00F6C44B /* Confessions */,
+				8E33DF932B475CC400F6C44B /* ConfessionsView.swift */,
+				8EE304F32B573CC0006ECD4D /* CatechismsView.swift */,
+				8EE304F52B573CE9006ECD4D /* CreedsView.swift */,
+				8EE304F72B575411006ECD4D /* SettingsView.swift */,
+				8EE304F92B575431006ECD4D /* AboutView.swift */,
 				8E33DF882B4750FC00F6C44B /* Assets.xcassets */,
 				8E33DF8A2B4750FC00F6C44B /* learnreformed.entitlements */,
 				8E33DF8B2B4750FC00F6C44B /* Preview Content */,
@@ -67,6 +87,15 @@
 				8E33DF8C2B4750FC00F6C44B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E33DF952B47612F00F6C44B /* Confessions */ = {
+			isa = PBXGroup;
+			children = (
+				8E33DF982B4769A200F6C44B /* 1689.json */,
+				8E33DF9C2B47729200F6C44B /* LondonBaptist.swift */,
+			);
+			path = Confessions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E33DF992B4769A200F6C44B /* 1689.json in Resources */,
 				8E33DF8D2B4750FC00F6C44B /* Preview Assets.xcassets in Resources */,
 				8E33DF892B4750FC00F6C44B /* Assets.xcassets in Resources */,
 			);
@@ -139,7 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE304FA2B575431006ECD4D /* AboutView.swift in Sources */,
+				8EE304F82B575411006ECD4D /* SettingsView.swift in Sources */,
 				8E33DF872B4750FB00F6C44B /* ContentView.swift in Sources */,
+				8E33DF9D2B47729200F6C44B /* LondonBaptist.swift in Sources */,
+				8EE304F42B573CC0006ECD4D /* CatechismsView.swift in Sources */,
+				8E33DF942B475CC400F6C44B /* ConfessionsView.swift in Sources */,
+				8EE304F62B573CE9006ECD4D /* CreedsView.swift in Sources */,
 				8E33DF852B4750FB00F6C44B /* learnreformedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
