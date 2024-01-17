@@ -6,19 +6,19 @@ struct ConfessionsView: View {
     @State private var confessionDetail: ConfessionDetail?
     @State private var showChapter = false
     @State private var chapterIndex = 0
-    
+
     init() {
         if let loadedData = loadJSONFromFile(named: "allConfessions") {
-            self.allConfessions = loadedData.confessions
+            allConfessions = loadedData.confessions
         } else {
-            self.allConfessions = []
+            allConfessions = []
         }
     }
-    
+
     var body: some View {
         VStack {
             Picker("Select Confession", selection: $selectedConfessionIndex) {
-                ForEach(0..<allConfessions.count, id: \.self) { index in
+                ForEach(0 ..< allConfessions.count, id: \.self) { index in
                     Text(allConfessions[index].title)
                         .tag(index)
                 }
@@ -30,22 +30,20 @@ struct ConfessionsView: View {
                 // You can update confessionDetail or perform any other actions
                 loadConfessionDetail(index: newIndex)
             }
-            
+
             if selectedConfessionIndex < allConfessions.count {
-                
                 if let detail = confessionDetail {
-                    List(0..<detail.content.count, id: \.self) { index in
+                    List(0 ..< detail.content.count, id: \.self) { index in
                         let chapter = detail.content[index]
-                        
+
                         NavigationLink(destination: ChapterView(chaptersData: detail.content, initialIndex: index)) {
                             Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
-                                .navigationBarTitle("Confessions", displayMode: .inline)
+                                .navigationBarTitle("All Chapters", displayMode: .inline)
                         }
                     }
                 } else {
                     Text("Confession Detail Not Available")
                 }
-                
             }
         }
         .onAppear {
@@ -53,12 +51,12 @@ struct ConfessionsView: View {
         }
 //        .navigationBarHidden(true)
     }
-    
+
     private func loadConfessionDetail(index: Int) {
         if index < allConfessions.count {
             let slug = allConfessions[index].slug
             if let confessionDetailData = loadConfessionJSONFromFile(named: slug) {
-                self.confessionDetail = confessionDetailData
+                confessionDetail = confessionDetailData
             }
         }
     }
@@ -73,7 +71,8 @@ struct ConfessionsView_Previews: PreviewProvider {
 func loadJSONFromFile(named filename: String) -> AllConfessions? {
     do {
         if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
-           let jsonData = try? Data(contentsOf: jsonURL) {
+           let jsonData = try? Data(contentsOf: jsonURL)
+        {
             let allConfessions = try JSONDecoder().decode(AllConfessions.self, from: jsonData)
             return allConfessions
         } else {
@@ -88,7 +87,8 @@ func loadJSONFromFile(named filename: String) -> AllConfessions? {
 func loadConfessionJSONFromFile(named filename: String) -> ConfessionDetail? {
     do {
         if let jsonURL = Bundle.main.url(forResource: filename, withExtension: "json"),
-           let jsonData = try? Data(contentsOf: jsonURL) {
+           let jsonData = try? Data(contentsOf: jsonURL)
+        {
             let confessionDetail = try JSONDecoder().decode(ConfessionDetail.self, from: jsonData)
             return confessionDetail
         } else {
