@@ -35,7 +35,7 @@ struct ScriptureModalView: View {
     func postScriptureToAPI(selectedScripture: String) {
         // Define the URL for the API endpoint
         // if let url = URL(string: "https://rwnextapi.vercel.app/api/scriptures") {
-        if let url = URL(string: "http://localhost:3002/api/scriptures") {
+        if let url = URL(string: "https://rwnextapi.vercel.app/api/scriptures") {
             // Create a URLRequest
             var request = URLRequest(url: url)
 
