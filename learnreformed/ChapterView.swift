@@ -112,7 +112,7 @@ struct ChapterView: View {
                 }
             }
         }
-        .navigationBarTitle(title, displayMode: .inline)
+        .navigationTitle(title)
     }
 
     private func getTitle(chapterDetail: Content) -> String {

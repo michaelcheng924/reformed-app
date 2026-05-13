@@ -27,8 +27,10 @@ private func homeMenuMain(geometry: GeometryProxy, onSelect: @escaping (String) 
             .frame(width: geometry.size.width, height: geometry.size.height)
             .ignoresSafeArea()
     )
+    #if os(iOS)
     .navigationBarHidden(true)
     .navigationBarTitle("Home", displayMode: .inline)
+    #endif
 }
 
 struct ContentView: View {

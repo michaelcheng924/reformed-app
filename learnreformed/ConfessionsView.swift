@@ -37,9 +37,9 @@ struct ConfessionsView: View {
 
                         NavigationLink(destination: ChapterView(chaptersData: detail.content, initialIndex: index, title: detail.title)) {
                             Text(chapter.chapter == "Preface" ? "Preface) \(chapter.title)" : "Chapter \(chapter.chapter)) \(chapter.title)")
-                                .navigationBarTitle("All Chapters", displayMode: .inline)
                         }
                     }
+                    .navigationTitle("All Chapters")
                 } else {
                     Text("Confession Detail Not Available")
                 }

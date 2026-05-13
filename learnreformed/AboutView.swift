@@ -8,7 +8,7 @@ struct AboutView: View {
                     .font(.body)
                     .padding()
             }
-            .navigationBarTitle("About", displayMode: .inline)
+            .navigationTitle("About")
         }
     }
 }
